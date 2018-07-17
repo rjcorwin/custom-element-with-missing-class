@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>foo-element demo</title>
+
+
+    <script type="module">
+      import '@polymer/iron-demo-helpers/demo-pages-shared-styles';
+      import '@polymer/iron-demo-helpers/demo-snippet';
+    </script>
+
+    <script type="module" src="../foo-element.js"></script>
+
+    <custom-style>
+      <style is="custom-style" include="demo-pages-shared-styles">
+      </style>
+    </custom-style>
+  </head>
+  <body>
+    <div class="vertical-section-container centered">
+      <h3>Basic foo-element demo</h3>
+      <demo-snippet>
+        <template>
+          <div id="container"></div>
+          <script>
+            window.container.innerHTML = `<foo-element id="foo">`
+            console.log(window.foo.constructor.name)
+            setTimeout(_ => console.log(window.foo.constructor.name), 1000)
+
+          </script>
+        </template>
+      </demo-snippet>
+    </div>
+  </body>
+</html>
